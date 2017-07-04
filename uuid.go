@@ -56,6 +56,10 @@ func New() UUID {
 	return UUID(uuid.Parse(uuid.New()))
 }
 
+func NewSHA1(space UUID, data []byte) UUID {
+	return UUID(uuid.NewSHA1(uuid.UUID(space), data))
+}
+
 func (u UUID) IsNil() bool {
 	return IsNil(u)
 }
