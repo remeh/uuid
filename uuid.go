@@ -102,7 +102,7 @@ func (u UUID) Value() (driver.Value, error) {
 // ----------------------
 
 func (u UUID) MarshalJSON() ([]byte, error) {
-	return uuid.UUID(u).MarshalJSON()
+	return uuid.UUID(u).MarshalText()
 }
 
 func (u *UUID) UnmarshalJSON(data []byte) error {
